@@ -1,0 +1,25 @@
+{
+  "name": "devfactory/menu",
+  "description": "menu ",
+  "keywords": ["Laravel 5", "menu"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alcindo Da Costa",
+      "email": "alcindo.dacosta@devfactory.ch"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "~5.0",
+    "cviebrock/eloquent-sluggable": ">=3.0.0-alpha",
+    "dimsav/laravel-translatable": "~5.0",
+    "vespakoen/menu": "3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Devfactory\\Menu\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
