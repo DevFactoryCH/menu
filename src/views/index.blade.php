@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section($layout->header)
-  <h1>@lang('menu::menu.page_title')</h1>
+  <h1>@lang('menus.page_title')</h1>
 @stop
 
 @section($layout->content)
