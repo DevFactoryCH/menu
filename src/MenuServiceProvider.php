@@ -21,7 +21,7 @@ class MenuServiceProvider extends ServiceProvider {
 	public function boot() {
     $this->publishConfig();
     $this->publishMigration();
-    $this->loadViewsFrom(__DIR__ . '/views', 'menu');
+    $this->loadViewsFrom(__DIR__ . '/views', 'menu_admin');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class MenuServiceProvider extends ServiceProvider {
 	public function register() {
     $this->mergeConfig();
 
-    $this->app->bind('menu', function() {
+    $this->app->bind('menu_admin', function() {
       return new Menu();
     });
 	}
@@ -43,7 +43,7 @@ class MenuServiceProvider extends ServiceProvider {
    * @return array
    */
   public function provides() {
-    return ['menu'];
+    return ['menu_admin'];
   }
 
 
@@ -61,7 +61,7 @@ class MenuServiceProvider extends ServiceProvider {
    */
   protected function publishConfig() {
     $this->publishes([
-      __DIR__ . '/config/config.php' => config_path('menu.config.php'),
+      __DIR__ . '/config/config.php' => config_path('menu_admin.config.php'),
     ]);
   }
 
@@ -71,7 +71,7 @@ class MenuServiceProvider extends ServiceProvider {
    */
   private function mergeConfig() {
     $this->mergeConfigFrom(
-      __DIR__ . '/config/config.php', 'media.config'
+      __DIR__ . '/config/config.php', 'menu_admin.config'
     );
   }
 }
