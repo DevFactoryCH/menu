@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section($layout->header)
-  <h1>@lang('menus.page_title')</h1>
+  <h1>{{ trans('menus.page_title') }}</h1>
 @stop
 
 @section($layout->content)
@@ -18,7 +18,7 @@
       <!-- general form elements -->
       <div class="box box-primary">
 
-        @include('menu::form')
+        @include('menu_admin::form')
 
           <div class="box-footer">
           {!! Form::submit(trans('general.buttons.save'), array('class' => 'btn btn-primary btn-flat')) !!}
