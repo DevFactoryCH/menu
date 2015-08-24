@@ -31,9 +31,9 @@ class MenuController extends BaseController {
     $this->model = $menu;
 
     $layout = (object) [
-      'extends' => config('menu.config.layout.extends'),
-      'header' => config('menu.config.layout.header'),
-      'content' => config('menu.config.layout.content'),
+      'extends' => config('menu_admin.config.layout.extends'),
+      'header' => config('menu_admin.config.layout.header'),
+      'content' => config('menu_admin.config.layout.content'),
     ];
 
     View::share('layout', $layout);
@@ -47,7 +47,7 @@ class MenuController extends BaseController {
 
     $menus = Menu::all();
 
-    return view('menu::index', compact('menus'));
+    return view('menu_admin::index', compact('menus'));
   }
 
   /**
@@ -56,7 +56,7 @@ class MenuController extends BaseController {
    * @return View
    */
   public function getCreate() {
-    return view('menu::create');
+    return view('menu_admin::create');
   }
 
   public function postStore(Request $request) {
@@ -76,7 +76,7 @@ class MenuController extends BaseController {
 
     App::setLocale(Helpers::getLang());
 
-    return view('menu::edit', compact('menu'));
+    return view('menu_admin::edit', compact('menu'));
   }
 
   public function putUpdate($id, Request $request) {

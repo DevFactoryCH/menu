@@ -28,7 +28,7 @@ Then in your `app/config/app.php` file register the service provider:
 and the Facade:
 
 ```php
-'Menu' => 'Devfactory\Menu\Facades\Menu',
+'MenuAdmin' => 'Devfactory\Menu\Facades\Menu',
 ```
 
 From within the the laravel folder of your project, run:
@@ -45,4 +45,10 @@ You have to add the Controller to your routes.php, so that you can set your own 
 Route::group(array('before' => 'admin-auth'), function() {
   Route::controller('menu', '\Devfactory\Menu\Controllers\MenuController');
 });
+```
+
+To show the menu
+
+```php
+  {!! MenuAdmin::show('nav menu'); !!}
 ```
